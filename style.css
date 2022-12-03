@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+}
+
+#play-btn {
+    margin-left: 120px;
+}
