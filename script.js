@@ -1,38 +1,30 @@
 const optionsArray = ["rock", "paper", "scissors"]
-let player1Item = document.getElementById("player-1-item")
-let player2Item = document.getElementById("player-2-item")
+let you = document.getElementById("player-1-item")
+let computer = document.getElementById("player-2-item")
+const rockBtn = document.getElementById("rock-btn")
+const paperBtn = document.getElementById("paper-btn")
+const scissorsBtn = document.getElementById("scissors-btn")
 let messageEl = document.getElementById("message")
 
-document.getElementById("play-btn").addEventListener("click", chooseRandom)
 document.getElementById("reset-btn").addEventListener("click", reset)
 
-function chooseRandom() {
-    let randomItemForPlayer1 = optionsArray[Math.floor(Math.random() * optionsArray.length)]
-    let randomItemForPlayer2 = optionsArray[Math.floor(Math.random() * optionsArray.length)]
-    player1Item.textContent = randomItemForPlayer1
-    player2Item.textContent = randomItemForPlayer2
-
-    if (randomItemForPlayer1 === "paper" && randomItemForPlayer2 === "paper") {
-        messageEl.textContent = "Draw!"
-    }  else if (randomItemForPlayer1 === "scissors" && randomItemForPlayer2 === "scissors") {
-        messageEl.textContent = "Draw!"
-    } else if (randomItemForPlayer1 === "rock" && randomItemForPlayer2 === "rock") {
-        messageEl.textContent = "Draw!"
-    } else if (randomItemForPlayer1 === "rock" && randomItemForPlayer2 === "paper") {
-        messageEl.textContent = "Player 2 has won!"
-    } else if (randomItemForPlayer1 === "scissors" && randomItemForPlayer2 === "rock") {
-        messageEl.textContent = "Player 2 has won!"
-    } else if (randomItemForPlayer1 === "paper" && randomItemForPlayer2 === "rock") {
-        messageEl.textContent = "Player 1 has won!"
-    } else if (randomItemForPlayer1 === "paper" && randomItemForPlayer2 === "scissors") {
-        messageEl.textContent = "Player 2 has won!"
-    } else if (randomItemForPlayer1 === "rock" && randomItemForPlayer2 === "scissors") {
-        messageEl.textContent = "Player 1 has won!"
-    }
+function pickRandomElement() {
+    return Math.floor(Math.random() * optionsArray.length)
 }
+
+function computersChoice() {
+    return optionsArray[pickRandomElement]
+}
+
+console.log(computersChoice())
 
 function reset() {
-    player1Item.textContent = ""
-    player2Item.textContent = ""
+    you.textContent = ""
+    computer.textContent = ""
     messageEl.textContent = ""
 }
+
+// you and computer have 3 options
+// you and computer pick one from three options
+// the winner is declared
+// click to clear the game

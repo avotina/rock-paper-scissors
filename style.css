@@ -6,6 +6,7 @@ html, body {
 .options {
     display: flex;
     justify-content: space-around;
+    margin-top: 40px;
 }
 
 .players {
@@ -13,6 +14,11 @@ html, body {
     justify-content: space-around;
 }
 
+.buttons {
+    margin-top: 40px;
+}
+
 #play-btn {
     margin-left: 120px;
+    margin-right: 120px;
 }
